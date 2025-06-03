@@ -1,0 +1,195 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #18122b;
+  font-family: "Segoe UI", Arial, sans-serif;
+  overflow-y: auto;
+}
+
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 4rem;
+  background: linear-gradient(135deg, #18122b 60%, #393053 100%);
+}
+
+.inputTextarea {
+  width: 100%;
+  max-width: 32rem;
+  min-height: 10rem;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 1.1rem;
+  border: 1.5px solid #8251d2;
+  border-radius: 10px;
+  outline: none;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px 0 #6525cb33;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.inputTextarea::placeholder {
+  text-align: center;
+  color: #cfc6e6;
+  opacity: 0.8;
+}
+.inputTextarea:focus {
+  border-color: #a182d4;
+  box-shadow: 0 4px 24px 0 #8251d2aa, 0 1.5px 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+.inputFileBtn {
+  width: 16rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #8251d2 60%, #a182d4 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px 0 #6525cb22;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inputFileBtn:hover {
+  background: linear-gradient(90deg, #a182d4 60%, #8251d2 100%);
+  box-shadow: 0 4px 16px 0 #8251d244;
+}
+.inputFileBtnHidden {
+  display: none;
+}
+
+.dropArea {
+  width: 100%;
+  max-width: 32rem;
+  min-height: 10rem;
+  border: 2px dashed #8251d2;
+  padding: 2.5rem 1rem;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #cfc6e6;
+  font-size: 1.1rem;
+  transition: background 0.2s, border-color 0.2s;
+  box-shadow: 0 2px 12px 0 #6525cb22;
+}
+.dropArea:hover {
+  background: rgba(130, 81, 210, 0.08);
+  border-color: #a182d4;
+}
+
+#defaultTxt {
+  margin-left: 0;
+  color: #cfc6e6;
+}
+
+.fileList li {
+  list-style-type: none;
+  padding-bottom: 0.4rem;
+}
+
+.uploadBtn,
+.resetBtn {
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.6rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 #6525cb22;
+}
+
+.uploadBtn {
+  background: linear-gradient(90deg, #00964b 60%, #00c97b 100%);
+  color: #fff;
+}
+.uploadBtn:hover {
+  background: linear-gradient(90deg, #00c97b 60%, #00964b 100%);
+  color: #fff;
+  text-decoration: underline;
+}
+
+.resetBtn {
+  background: linear-gradient(90deg, #921120 60%, #c03a4a 100%);
+  color: #fff;
+}
+.resetBtn:hover {
+  background: linear-gradient(90deg, #c03a4a 60%, #921120 100%);
+  color: #fff;
+  text-decoration: underline;
+}
+
+.uploadResult {
+  border: 1px solid #8251d2;
+  border-radius: 14px;
+  padding: 1rem;
+  width: 16rem;
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#resultCode,
+#resultLink {
+  font-size: 1.2rem;
+  color: #a182d4;
+  text-decoration-color: white;
+}
+
+#resultLink:focus {
+  color: #bda4e5;
+  text-decoration-color: white;
+}
+
+.copyBtn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #a259ff 0%, #5f2eea 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.copyBtn:hover {
+  background: linear-gradient(135deg, #5f2eea 0%, #a259ff 100%);
+}
+
+@media (max-width: 600px) {
+  .uploadContainer {
+    padding-top: 2rem;
+  }
+  .inputTextarea,
+  .dropArea {
+    max-width: 95vw;
+    width: 80vw;
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+  .inputFileBtn {
+    width: 30vw;
+    min-width: 0;
+    font-size: 1rem;
+  }
+  .uploadResult {
+    width: 80vw;
+  }
+  #resultLink {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+}

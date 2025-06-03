@@ -1,0 +1,41 @@
+.alert-box {
+  position: fixed;
+  z-index: 1000;
+  padding: 1rem 1.5rem;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  width: max-content;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.alert-box.hide{
+  opacity:0;
+  pointer-events: none;
+}
+
+.alert-box.success {
+  background: #00b359;
+}
+
+.alert-box.error {
+  background: #b91629;
+}
+
+@media (min-width: 768px) {
+  .alert-box {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .alert-box {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
