@@ -10,6 +10,9 @@
   --footer-link: #8953df;
   --footer-link-hover: #c084fc;
 }
+::selection{
+  background-color: #5f45b4;
+}
 
 /* MAIN STYLING */
 body {
