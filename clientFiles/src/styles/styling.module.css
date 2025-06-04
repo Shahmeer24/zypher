@@ -10,7 +10,7 @@
   --footer-link: #8953df;
   --footer-link-hover: #c084fc;
 }
-::selection{
+::selection {
   background-color: #5f45b4;
 }
 
@@ -23,7 +23,12 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
+
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  outline: none;
 }
 .mainContainer {
   background-image: linear-gradient(135deg, #18122b 60%, #393053 100%);
@@ -141,6 +146,7 @@ button {
   max-width: 100vw;
   padding: 1rem 0 1.5rem 0;
   z-index: 100;
+  margin-top: 1rem;
 }
 
 .footer button {
