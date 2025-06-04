@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AlertBox from "../components/AlertBox";
 import style from "../styles/styling.module.css";
 import ustyle from "../styles/uploadstyling.module.css";
@@ -10,6 +11,8 @@ import { BASE_URL } from "../config";
 const MAX_FILE_SIZE_MB = 10;
 
 const Upload = () => {
+  const navigate = useNavigate();
+
   const [text, setText] = useState("");
   const [files, setFiles] = useState([]);
   const [uploadResult, setUploadResult] = useState(null);
@@ -105,6 +108,9 @@ const Upload = () => {
       </a>
       <div className={ustyle.uploadContainer}>
         <h2>Upload Data</h2>
+        <button className={ustyle.navBtn} onClick={() => navigate("/retrieve")}>
+          want to retrieve?
+        </button>
         <h3>Enter Text</h3>
         <textarea
           className={ustyle.inputTextarea}
