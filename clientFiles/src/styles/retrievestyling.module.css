@@ -151,6 +151,13 @@ body {
   background: linear-gradient(90deg, #a182d4 60%, #8251d2 100%);
 }
 
+.navBtn {
+  color: #bfadeb;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .downloadWrapper {
     flex-direction: column;
