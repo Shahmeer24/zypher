@@ -40,4 +40,4 @@ zypher/
 
 **Note**
 
-Uploads are stored in memory. Data will reset if backend sleeps (Render free tier).
+Uploads are stored in memory. Data will reset if backend sleeps (Render free tier). -> Issue fixed using cronjobs 
