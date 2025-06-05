@@ -144,7 +144,7 @@ button {
   gap: 1.5rem;
   width: 100vw;
   max-width: 100vw;
-  padding: 0.8rem 0 2rem 0;
+  padding: 0.6rem 0 0.6rem 0;
   z-index: 10000;
   margin-top: 1rem;
 }
@@ -154,7 +154,6 @@ button {
   border: none;
   font-size: 1.2rem;
   transition: color 0.2s;
-  margin-bottom: -1.5rem;
   z-index: 10000;
 }
 .footer button:hover {
