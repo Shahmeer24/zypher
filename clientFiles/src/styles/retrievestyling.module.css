@@ -219,4 +219,8 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .downloadBtn{
+    width: 10rem;
+  }
 }
