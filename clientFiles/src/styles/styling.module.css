@@ -16,8 +16,8 @@
 
 /* MAIN STYLING */
 body {
-  background-color: #18122b;
   min-height: 100vh;
+  min-width: 100vw;
   color: var(--font-color);
   font-family: var(--font-family);
   scroll-behavior: smooth;
@@ -65,7 +65,7 @@ button {
 }
 
 .subContainer p {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   font-size: 1.3rem;
   text-align: center;
   color: var(--font-color);
@@ -136,6 +136,7 @@ button {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
+  background-color: #222;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -143,17 +144,18 @@ button {
   gap: 1.5rem;
   width: 100vw;
   max-width: 100vw;
-  padding: 1rem 0 1.5rem 0;
-  z-index: 100;
+  padding: 0.8rem 0 2rem 0;
+  z-index: 10000;
   margin-top: 1rem;
 }
 
 .footer button {
-  color: var(--footer-link);
-  background: none;
+  color: white;  
   border: none;
   font-size: 1.2rem;
   transition: color 0.2s;
+  margin-bottom: -1.5rem;
+  z-index: 10000;
 }
 .footer button:hover {
   color: var(--footer-link-hover);
