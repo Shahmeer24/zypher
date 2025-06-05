@@ -159,9 +159,9 @@ body {
 }
 
 .spinstyle {
-  display: "flex";
-  justify-content: "center";
-  margin-top: "1rem";
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 @media (max-width: 900px) {
