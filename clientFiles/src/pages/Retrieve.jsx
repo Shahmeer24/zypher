@@ -138,8 +138,12 @@ function Retrieve() {
             <button className={rstyle.submitBtn} onClick={() => handleSubmit()}>
               Fetch
             </button>
+            {uploading && (
+              <div style={rstyle.spinstyle}>
+                <Spinner />
+              </div>
+            )}
           </div>
-            {uploading && <Spinner />}
 
           {alert.show && (
             <AlertBox
