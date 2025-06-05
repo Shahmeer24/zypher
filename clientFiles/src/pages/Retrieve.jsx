@@ -37,6 +37,8 @@ function Retrieve() {
   };
 
   const fetchFileInfo = async (fetchCode) => {
+    setUploading(true);
+
     try {
       const res = await fetch(`${BASE_URL}/api/file/${fetchCode}`);
       if (!res.ok) throw new Error("File not found or expired.");
@@ -52,6 +54,8 @@ function Retrieve() {
     } catch (err) {
       setAlert({ show: true, type: "error", message: err.message });
       resetState();
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -69,11 +73,11 @@ function Retrieve() {
   };
 
   const handleDownload = async () => {
+    setUploading(true);
     try {
       const res = await fetch(`${BASE_URL}/api/download/${activeCode}`);
       if (!res.ok) throw new Error("Unable to download file.");
-      
-      setUploading(true);
+
       const blob = await res.blob();
       const fileURL = window.URL.createObjectURL(blob);
 
