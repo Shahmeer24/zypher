@@ -158,6 +158,13 @@ body {
   text-underline-offset: 2px;
 }
 
+.manualCode{
+   display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top:1rem;
+}
+
 @media (max-width: 900px) {
   .downloadWrapper {
     flex-direction: column;
