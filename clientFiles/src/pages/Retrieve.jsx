@@ -139,7 +139,7 @@ function Retrieve() {
               Fetch
             </button>
             {uploading && (
-              <div style={rstyle.spinstyle}>
+              <div className={rstyle.spinstyle}>
                 <Spinner />
               </div>
             )}
