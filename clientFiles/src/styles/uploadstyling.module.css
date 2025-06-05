@@ -13,7 +13,7 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   padding-top: 4rem;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
   background: linear-gradient(135deg, #18122b 60%, #393053 100%);
 }
 
@@ -102,6 +102,7 @@ body {
 .uploadBtn,
 .resetBtn {
   font-size: 1.1rem;
+  width: 7rem;
   border: none;
   border-radius: 6px;
   padding: 0.7rem 1.6rem;
@@ -149,6 +150,10 @@ body {
   color: #a182d4;
   text-decoration-color: white;
 }
+#resultLink {
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
 
 #resultLink:focus {
   color: #bda4e5;
@@ -169,18 +174,18 @@ body {
 .copyBtn:hover {
   background: linear-gradient(135deg, #5f2eea 0%, #a259ff 100%);
 }
-.navBtn{
-  color:#bfadeb;
+.navBtn {
+  color: #bfadeb;
   font-size: 1.2rem;
   text-decoration: underline;
- text-underline-offset: 2px;
+  text-underline-offset: 2px;
 }
 
-.btnRow{
+.btnRow {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 @media (max-width: 600px) {
