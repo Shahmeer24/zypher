@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import AlertBox from "../components/AlertBox.jsx";
+import Spinner from "../components/Spinner.jsx";
 import style from "../styles/styling.module.css";
 import rstyle from "../styles/retrievestyling.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,6 +20,7 @@ function Retrieve() {
   const [activeCode, setActiveCode] = useState("");
   const [fileType, setFileType] = useState("");
   const [textData, setTextData] = useState("");
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     if (code) {
@@ -70,7 +72,8 @@ function Retrieve() {
     try {
       const res = await fetch(`${BASE_URL}/api/download/${activeCode}`);
       if (!res.ok) throw new Error("Unable to download file.");
-
+      
+      setUploading(true);
       const blob = await res.blob();
       const fileURL = window.URL.createObjectURL(blob);
 
@@ -85,6 +88,8 @@ function Retrieve() {
       setAlert({ show: true, type: "success", message: "Download started." });
     } catch (err) {
       setAlert({ show: true, type: "error", message: "Error in download." });
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -129,6 +134,7 @@ function Retrieve() {
             <button className={rstyle.submitBtn} onClick={() => handleSubmit()}>
               Fetch
             </button>
+            {uploading && <Spinner />}
           </div>
 
           {alert.show && (
