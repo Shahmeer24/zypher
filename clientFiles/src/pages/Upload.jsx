@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AlertBox from "../components/AlertBox";
+import Spinner from "../components/Spinner";
 import style from "../styles/styling.module.css";
 import ustyle from "../styles/uploadstyling.module.css";
 import axios from "axios";
@@ -170,7 +171,7 @@ const Upload = () => {
             Reset
           </button>
         </div>
-        {uploading && <div className={ustyle.spinner}></div>}
+        {uploading && <Spinner />}
 
         {uploadResult?.code && uploadResult?.link && (
           <div className={ustyle.uploadResult}>
