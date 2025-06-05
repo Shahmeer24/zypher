@@ -1,7 +1,6 @@
 body {
   overflow-y: auto;
 }
-
 .downloadWrapper {
   display: flex;
   justify-content: center;
@@ -51,7 +50,7 @@ body {
 
 .copyBtn {
   margin-top: 0.5rem;
-  width:5rem;
+  width:6rem;
   padding: 0.5rem 1.2rem;
   border-radius: 0.5rem;
   background: linear-gradient(135deg, #a259ff 0%, #5f2eea 100%);
@@ -219,8 +218,7 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-
   .downloadBtn{
-    width: 10rem;
+    width:10rem;
   }
 }
