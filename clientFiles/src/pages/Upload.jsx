@@ -17,6 +17,7 @@ const Upload = () => {
   const [files, setFiles] = useState([]);
   const [uploadResult, setUploadResult] = useState(null);
   const [alert, setAlert] = useState({ message: "", type: "", visible: false });
+  const [uploading, setUploading] = useState(false);
 
   const showAlert = (message, type = "error") => {
     setAlert({ message, type, visible: true });
@@ -70,6 +71,9 @@ const Upload = () => {
       showAlert("Please upload a file or enter some text.");
       return;
     }
+
+    setUploading(true);
+
     const formData = new FormData();
     if (text) {
       formData.append("text", text);
@@ -92,6 +96,8 @@ const Upload = () => {
       } else {
         showAlert("Upload failed", "error");
       }
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -156,7 +162,7 @@ const Upload = () => {
             <p>No files selected</p>
           )}
         </div>
-        <div>
+        <div className={ustyle.btnRow}>
           <button className={ustyle.uploadBtn} onClick={handleUpload}>
             Upload
           </button>
@@ -164,6 +170,8 @@ const Upload = () => {
             Reset
           </button>
         </div>
+        {uploading && <div className={ustyle.spinner}></div>}
+
         {uploadResult?.code && uploadResult?.link && (
           <div className={ustyle.uploadResult}>
             <p>
