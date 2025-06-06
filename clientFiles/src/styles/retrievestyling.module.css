@@ -27,10 +27,9 @@ body {
 
 .textBox {
   width: auto;
-  max-width: 32rem;
-  min-width: 16rem;
-  min-height: 10rem;
-  resize: vertical;
+  width: 32rem;
+  height: 10rem;
+  resize: none;
   font-size: 1.1rem;
   padding: 1rem;
   border-radius: 10px;
@@ -199,7 +198,7 @@ body {
     max-width: 98vw;
   }
   .textBox {
-    max-width: 80vw;
+    width: 80vw;
     font-size: 1rem;
     padding: 0.7rem;
   }
