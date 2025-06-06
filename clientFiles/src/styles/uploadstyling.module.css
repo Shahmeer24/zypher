@@ -19,8 +19,8 @@ body {
 
 .inputTextarea {
   width: 100%;
-  max-width: 32rem;
-  min-height: 10rem;
+  width: 32rem;
+  height: 10rem;
   background: rgba(255, 255, 255, 0.07);
   color: #fff;
   font-size: 1.1rem;
@@ -70,8 +70,8 @@ body {
 
 .dropArea {
   width: 100%;
-  max-width: 32rem;
-  min-height: 10rem;
+  width: 32rem;
+  height: 10rem;
   border: 2px dashed #8251d2;
   padding: 2.5rem 1rem;
   border-radius: 14px;
@@ -194,8 +194,8 @@ body {
   }
   .inputTextarea,
   .dropArea {
-    max-width: 95vw;
     width: 80vw;
+    
     font-size: 1rem;
     padding: 0.7rem;
   }
