@@ -125,7 +125,6 @@ const Upload = () => {
           value={text}
           onChange={handleTextChange}
           rows={6}
-          resize={none}
         />
         <h2>or</h2>
         <h3>Select File(s) - max size 10mb</h3>
