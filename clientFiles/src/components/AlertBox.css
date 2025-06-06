@@ -13,6 +13,7 @@
   transition: opacity 0.3s;
 }
 .alert-box.hide{
+  transform: translateX(-50%);
   opacity:0;
   pointer-events: none;
 }
