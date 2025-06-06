@@ -10,6 +10,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
   opacity: 1;
+  transform: translateX(-50%);
   transition: opacity transform 0.3s;
 }
 .alert-box.hide{
