@@ -187,7 +187,7 @@ const Upload = () => {
                 rel="noopener noreferrer"
                 className={ustyle.textDecor}
               >
-                <p id={ustyle.resultLink}>{uploadResult.link}</p>
+                <p id={ustyle.resultLink} className={ustyle.textDecor}>{uploadResult.link}</p>
               </a>
             </p>
           </div>
