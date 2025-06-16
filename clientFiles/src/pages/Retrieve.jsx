@@ -176,6 +176,9 @@ function Retrieve() {
                 className={rstyle.filename}
                 style={{ textDecoration: "underline" }}
               >
+                {code &&
+                 ? `${code || "file"}-zypher-files.zip`
+                  : filename}
                 {code}-zypher-files.zip
               </p>
               <button className={rstyle.downloadBtn} onClick={handleDownload}>
