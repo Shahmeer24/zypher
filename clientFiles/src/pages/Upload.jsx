@@ -185,6 +185,7 @@ const Upload = () => {
                 href={uploadResult.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                className={ustyle.textDecor}
               >
                 <p id={ustyle.resultLink}>{uploadResult.link}</p>
               </a>
