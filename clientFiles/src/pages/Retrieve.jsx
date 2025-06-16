@@ -176,11 +176,11 @@ function Retrieve() {
                 className={rstyle.filename}
                 style={{ textDecoration: "underline" }}
               >
-                {code &&
-                  `${code || "file"}-zypher-files.zip`
-                  : filename}
-                
+              {filename?.endsWith(".zip")
+              ? `${code || "file"}-zypher-files.zip`
+              : filename}
               </p>
+
               <button className={rstyle.downloadBtn} onClick={handleDownload}>
                 <FontAwesomeIcon icon={faDownload} /> Download
               </button>
