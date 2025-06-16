@@ -177,7 +177,7 @@ function Retrieve() {
                 style={{ textDecoration: "underline" }}
               >
                 {code &&
-                 ? `${code || "file"}-zypher-files.zip`
+                  `${code || "file"}-zypher-files.zip`
                   : filename}
                 
               </p>
