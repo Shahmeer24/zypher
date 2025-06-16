@@ -160,6 +160,10 @@ body {
   text-decoration-color: #ffffff;
 }
 
+.textDecor{
+    text-decoration-color: white;
+}
+
 .copyBtn {
   margin-top: 0.5rem;
   padding: 0.5rem 1.2rem;
