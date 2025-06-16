@@ -156,9 +156,8 @@ body {
   overflow-wrap: anywhere;
 }
 
-#resultLink:focus {
-  color: #bda4e5;
-  text-decoration-color: white;
+#resultLink {
+  text-decoration-color: #ffffff;
 }
 
 .copyBtn {
