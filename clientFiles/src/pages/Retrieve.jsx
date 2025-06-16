@@ -83,7 +83,7 @@ function Retrieve() {
 
       const a = document.createElement("a");
       a.href = fileURL;
-      a.download = filename || "file";
+      a.download = `${code}_zypher_files.zip`;
       document.body.appendChild(a);
       a.click();
       a.remove();
