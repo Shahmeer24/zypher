@@ -1,6 +1,7 @@
 {
   "short_name": "Zypher",
   "name": "Zypher - Minimal sharing tool",
+  "description": "A minimal sharing tool.",
   "icons": [
     {
       "src": "clientFiles/public/LOGO.png",
@@ -13,7 +14,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#111111",
   "background_color": "#111111"
