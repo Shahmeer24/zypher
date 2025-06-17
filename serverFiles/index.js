@@ -94,9 +94,8 @@ app.post(
         type: "file",
       });
     } else {
-      const zipFilename = `${code}_zypher_files.zip`;
+      const zipFilename = `${code}_zypher_files`;
       const zipPath = path.join(uploadDir, zipFilename);
-      console.log(zipFilename);
 
       const output = fs.createWriteStream(zipPath);
       const archive = archiver("zip", { zlib: { level: 9 } });
