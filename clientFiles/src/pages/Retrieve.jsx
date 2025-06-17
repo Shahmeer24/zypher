@@ -83,7 +83,7 @@ function Retrieve() {
 
       const a = document.createElement("a");
       a.href = fileURL;
-      a.download = `${activeCode || "file"}_zypher_files.zip`;
+      a.download = `${activeCode || "file"}_zypher_files`;
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -177,7 +177,7 @@ function Retrieve() {
                 style={{ textDecoration: "underline" }}
               >
               {filename?.endsWith(".zip")
-              ? `${activeCode || "file"}-zypher-files.zip`
+              ? `${activeCode || "file"}-zypher-files`
               : filename}
 
               </p>
