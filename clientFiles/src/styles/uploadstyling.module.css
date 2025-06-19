@@ -98,12 +98,33 @@ body {
 .fileList li {
   list-style-type: none;
   padding-bottom: 0.4rem;
-  max-width: 6rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 5px 0;
+}
+.fileName{
+  flex:1;
+  max-width: 60%;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left:8px;
+  margin-right:8px;
 }
 .trashIcon{
   margin-right: 10px;
   cursor: pointer;
   color: #eba4a4;
+}
+
+.trashIcon:hover{
+  color:#ff4c4c;
 }
 
 
@@ -162,9 +183,6 @@ body {
 #resultLink {
   word-break: break-all;
   overflow-wrap: anywhere;
-}
-
-#resultLink {
   text-decoration-color: #ffffff;
 }
 
