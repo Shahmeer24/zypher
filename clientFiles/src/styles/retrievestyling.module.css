@@ -133,6 +133,11 @@ body {
   font-size: 1.1rem;
   margin: 1rem 0;
   color: #cfc6e6;
+  max-width: 80vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
 }
 
 .downloadBtn {
@@ -206,6 +211,9 @@ body {
     min-width: 0;
     font-size: 1rem;
     padding: 0.7rem;
+  }
+  .filename{
+    max-width: 80vw;
   }
   .downloadBtn,
   .submitBtn {
