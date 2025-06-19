@@ -6,7 +6,7 @@ import style from "../styles/styling.module.css";
 import ustyle from "../styles/uploadstyling.module.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFile } from "@fortawesome/free-solid-svg-icons";
+import { faFile, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL } from "../config";
 
 const MAX_FILE_SIZE_MB = 100;
@@ -83,6 +83,11 @@ const Upload = () => {
         formData.append("files", file);
       });
     }
+
+    const handleRemoveFile = (index) => {
+      setFiles((prevFiles) => prevFiles.filter((_, idx) => !== index));
+    };
+    
     try {
       const res = await axios.post(`${BASE_URL}/upload`, formData);
       if (!res?.data?.code) {
@@ -156,6 +161,12 @@ const Upload = () => {
                     style={{ marginRight: "8px" }}
                   />
                   {file.name}
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    className={ustyle.trashIcon}
+                    onClick={() => handleRemoveFile(index)}
+                    title="Remove File"
+                    />
                 </li>
               ))}
             </ul>
