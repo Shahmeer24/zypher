@@ -155,7 +155,7 @@ const Upload = () => {
             <ul>
               <p id={ustyle.defaultTxt}>Selected Files:</p>
               {files.map((file, index) => (
-                <li key={index}>
+                <li key={index} className={ustyle.fileItem}>
                   <FontAwesomeIcon
                     icon={faTrash}
                     className={ustyle.trashIcon}
@@ -166,6 +166,10 @@ const Upload = () => {
                     icon={faFile}
                     style={{ marginRight: "8px" }}
                   />
+                  <span
+                    className={ustyle.fileName}
+                    title={file.name}
+                  >
                   {file.name}
                 </li>
               ))}
