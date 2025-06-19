@@ -100,9 +100,9 @@ body {
   padding-bottom: 0.4rem;
 }
 .trashIcon{
-  margin-left: 10px;
+  margin-right: 10px;
   cursor: pointer;
-  color: red;
+  color: #eba4a4;
 }
 
 
