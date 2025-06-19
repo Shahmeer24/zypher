@@ -171,6 +171,7 @@ const Upload = () => {
                     title={file.name}
                   >
                   {file.name}
+                  </span>
                 </li>
               ))}
             </ul>
