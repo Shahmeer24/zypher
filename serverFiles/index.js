@@ -104,7 +104,7 @@ app.post(
         type: "file",
       });
     } else {
-      const zipFilename = `${code}_fs.zip`;
+      const zipFilename = `${code}_zypher_files.zip`;
       const zipPath = path.join(uploadDir, zipFilename);
 
       const output = fs.createWriteStream(zipPath);
