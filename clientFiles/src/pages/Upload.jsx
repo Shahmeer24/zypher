@@ -157,16 +157,16 @@ const Upload = () => {
               {files.map((file, index) => (
                 <li key={index}>
                   <FontAwesomeIcon
-                    icon={faFile}
-                    style={{ marginRight: "8px" }}
-                  />
-                  {file.name}
-                  <FontAwesomeIcon
                     icon={faTrash}
                     className={ustyle.trashIcon}
                     onClick={() => handleRemoveFile(index)}
                     title="Remove File"
                     />
+                  <FontAwesomeIcon
+                    icon={faFile}
+                    style={{ marginRight: "8px" }}
+                  />
+                  {file.name}
                 </li>
               ))}
             </ul>
