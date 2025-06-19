@@ -26,7 +26,7 @@ function About() {
         <p className={astyle.aboutDescription}>
           <strong>Zypher</strong> is a fast, modern file and text sharing tool
           built for simplicity. It allows anyone to securely upload text or
-          multiple files (under 100MB), generate a shareable code and let others
+          multiple files (under 20MB), generate a shareable code and let others
           download the content using that code without needing signups or
           accounts. All uploads are temporary and auto-delete after 10 minutes,
           making it ideal for quick sharing. Built with a React frontend and
