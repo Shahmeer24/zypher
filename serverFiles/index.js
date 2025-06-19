@@ -49,7 +49,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({
   storage: storage,
-  limits: { fileSize: 100 * 1024 * 1024 },
+  limits: { fileSize: 20 * 1024 * 1024 },
 });
 
 app.get("/", (req, res) => {
@@ -104,7 +104,7 @@ app.post(
         type: "file",
       });
     } else {
-      const zipFilename = `${code}_zypher_files.zip`;
+      const zipFilename = `${code}-zypher-files.zip`;
       const zipPath = path.join(uploadDir, zipFilename);
 
       const output = fs.createWriteStream(zipPath);
