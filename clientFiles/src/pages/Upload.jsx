@@ -83,10 +83,6 @@ const Upload = () => {
         formData.append("files", file);
       });
     }
-
-    const handleRemoveFile = (index) => {
-      setFiles((prevFiles) => prevFiles.filter((_, idx) => !== index));
-    };
     
     try {
       const res = await axios.post(`${BASE_URL}/upload`, formData);
@@ -106,6 +102,10 @@ const Upload = () => {
       setUploading(false);
     }
   };
+
+   const handleRemoveFile = (index) => {
+      setFiles((prevFiles) => prevFiles.filter((_, idx) => idx !== index));
+    };
 
   const handleReset = () => {
     setText("");
@@ -132,7 +132,7 @@ const Upload = () => {
           rows={6}
         />
         <h2>or</h2>
-        <h3>Select File(s) - max size 10mb</h3>
+        <h3>Select File(s) - max size 100mb</h3>
         <div
           className={ustyle.dropArea}
           onDragOver={(e) => e.preventDefault()}
