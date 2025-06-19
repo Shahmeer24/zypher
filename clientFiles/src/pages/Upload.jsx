@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL } from "../config";
 
-const MAX_FILE_SIZE_MB = 100;
+const MAX_FILE_SIZE_MB = 20;
 
 const Upload = () => {
   const navigate = useNavigate();
