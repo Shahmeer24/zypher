@@ -31,12 +31,20 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
 
+function generateCode(length = 4) {
+  let code = "";
+  for (let i = 0; i < length; i++) {
+    code += Math.floor(Math.random() * 10);
+  }
+  return code.padStart(length,"0");
+}
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
-    const name = `${uuidv4()}_${file.originalname}`;
+    const name = `${Date.now()}_${file.originalname}`;
     cb(null, name);
   },
 });
@@ -55,7 +63,10 @@ app.post(
   express.json(),
   express.urlencoded({ extended: true }),
   async (req, res) => {
-    const code = uuidv4().slice(0, 4);
+    let code;
+    do{
+      code=generateCode(4);
+    } while (fileStore.has(code));
     const expiry = Date.now() + 10 * 60 * 1000;
 
     if (req.body.text) {
