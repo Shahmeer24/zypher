@@ -132,7 +132,7 @@ const Upload = () => {
           rows={6}
         />
         <h2>or</h2>
-        <h3>Select File(s) - max size 100mb</h3>
+        <h3>Select File(s) - max size 20mb</h3>
         <div
           className={ustyle.dropArea}
           onDragOver={(e) => e.preventDefault()}
