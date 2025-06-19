@@ -6,7 +6,7 @@ Zypher is a fast, minimal, and temporary file and text sharing app built for rea
 
 ## Features
 
-- Upload multiple files (up to 10MB total) or just plain text
+- Upload multiple files (up to 20MB total) or just plain text
 - Get a short code + sharable link
 - Retrieve instantly via code or link
 - Files auto-expire after 10 minutes
