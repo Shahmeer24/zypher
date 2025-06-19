@@ -94,7 +94,7 @@ app.post(
         type: "file",
       });
     } else {
-      const zipFilename = `${uuidv4()}_files.zip`;
+      const zipFilename = `${code}_files.zip`;
       const zipPath = path.join(uploadDir, zipFilename);
 
       const output = fs.createWriteStream(zipPath);
