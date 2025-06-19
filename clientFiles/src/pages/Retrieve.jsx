@@ -83,7 +83,7 @@ function Retrieve() {
 
       const a = document.createElement("a");
       a.href = fileURL;
-      a.download = `${activeCode || "file"}_zypher_files`;
+      a.download = filename || "file";
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -176,12 +176,8 @@ function Retrieve() {
                 className={rstyle.filename}
                 style={{ textDecoration: "underline" }}
               >
-              {filename?.endsWith(".zip")
-              ? `${activeCode || "file"}-zypher-files`
-              : filename}
-
+                {filename}
               </p>
-
               <button className={rstyle.downloadBtn} onClick={handleDownload}>
                 <FontAwesomeIcon icon={faDownload} /> Download
               </button>
