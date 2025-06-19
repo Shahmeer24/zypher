@@ -16,7 +16,7 @@ Zypher is a fast, minimal, and temporary file and text sharing app built for rea
 ## Stack
 
 **Frontend:** React, React Router, CSS Modules, FontAwesome, Vercel  
-**Backend:** Node.js, Express, Multer, UUID, Render
+**Backend:** Node.js, Express, Multer, Render
 
 ---
 
