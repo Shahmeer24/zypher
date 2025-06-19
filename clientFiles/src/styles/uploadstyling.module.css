@@ -98,6 +98,7 @@ body {
 .fileList li {
   list-style-type: none;
   padding-bottom: 0.4rem;
+  max-width: 6rem;
 }
 .trashIcon{
   margin-right: 10px;
