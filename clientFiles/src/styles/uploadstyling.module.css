@@ -110,7 +110,7 @@ body {
 }
 .fileName{
   flex:1;
-  max-width: 60%;
+  max-width: 80%;
   overflow:hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -236,6 +236,14 @@ body {
   }
   .uploadResult {
     width: 80vw;
+  }
+  .fileItem {
+    max-width: 80vw;
+  }
+
+ .fileName {
+   max-width: 60vw;
+   font-size: 0.9rem;
   }
   #resultLink {
     word-break: break-all;
