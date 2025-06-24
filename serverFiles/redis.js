@@ -1,5 +1,5 @@
-const fetch = require("node-fetch");
 require("dotenv").config();
+const fetch = require("node-fetch");
 
 const REDIS_URL = process.env.REDIS_URL;
 const AUTH_TOKEN = process.env.REDIS_TOKEN;
