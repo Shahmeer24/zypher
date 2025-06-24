@@ -12,7 +12,16 @@ import { BASE_URL } from "../config";
 
 const MAX_FILE_SIZE_MB = 20;
 
-useEffect(() => {
+const Upload = () => {
+  const navigate = useNavigate();
+
+  const [text, setText] = useState("");
+  const [files, setFiles] = useState([]);
+  const [uploadResult, setUploadResult] = useState(null);
+  const [alert, setAlert] = useState({ message: "", type: "", visible: false });
+  const [uploading, setUploading] = useState(false);
+
+  useEffect(() => {
   const handleGlobalKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -27,16 +36,6 @@ useEffect(() => {
     window.removeEventListener("keydown", handleGlobalKeyDown);
   };
 }, [text, files]);
-
-
-const Upload = () => {
-  const navigate = useNavigate();
-
-  const [text, setText] = useState("");
-  const [files, setFiles] = useState([]);
-  const [uploadResult, setUploadResult] = useState(null);
-  const [alert, setAlert] = useState({ message: "", type: "", visible: false });
-  const [uploading, setUploading] = useState(false);
 
   const showAlert = (message, type = "error") => {
     setAlert({ message, type, visible: true });
@@ -101,7 +100,7 @@ const Upload = () => {
         formData.append("files", file);
       });
     }
-    
+
     try {
       const res = await axios.post(`${BASE_URL}/upload`, formData);
       if (!res?.data?.code) {
@@ -122,17 +121,17 @@ const Upload = () => {
   };
 
   const handleKeyPress = (e) => {
-    if(e.key === "Enter" && !e.shiftKey){
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      if(text.trim() || files.length>0){
+      if (text.trim() || files.length > 0) {
         handleUpload();
       }
     }
   };
 
-   const handleRemoveFile = (index) => {
-      setFiles((prevFiles) => prevFiles.filter((_, idx) => idx !== index));
-    };
+  const handleRemoveFile = (index) => {
+    setFiles((prevFiles) => prevFiles.filter((_, idx) => idx !== index));
+  };
 
   const handleReset = () => {
     setText("");
@@ -157,7 +156,6 @@ const Upload = () => {
           value={text}
           onChange={handleTextChange}
           rows={6}
-          onKeyDown={handleKeyPress}
         />
         <h2>or</h2>
         <h3>Select File(s) - max size 20mb</h3>
@@ -175,7 +173,6 @@ const Upload = () => {
             className={ustyle.inputFileBtnHidden}
             multiple
             onChange={handleFileChange}
-            onKeyDown={handleKeyPress}
             accept="*/*"
           />
         </div>
@@ -190,16 +187,13 @@ const Upload = () => {
                     className={ustyle.trashIcon}
                     onClick={() => handleRemoveFile(index)}
                     title="Remove File"
-                    />
+                  />
                   <FontAwesomeIcon
                     icon={faFile}
                     style={{ marginRight: "8px" }}
                   />
-                  <span
-                    className={ustyle.fileName}
-                    title={file.name}
-                  >
-                  {file.name}
+                  <span className={ustyle.fileName} title={file.name}>
+                    {file.name}
                   </span>
                 </li>
               ))}
@@ -232,7 +226,9 @@ const Upload = () => {
                 rel="noopener noreferrer"
                 className={ustyle.textDecor}
               >
-                <p id={ustyle.resultLink} className={ustyle.textDecor}>{uploadResult.link}</p>
+                <p id={ustyle.resultLink} className={ustyle.textDecor}>
+                  {uploadResult.link}
+                </p>
               </a>
             </p>
           </div>
