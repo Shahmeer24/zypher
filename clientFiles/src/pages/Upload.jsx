@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AlertBox from "../components/AlertBox";
 import Spinner from "../components/Spinner";
@@ -10,6 +11,23 @@ import { faFile, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL } from "../config";
 
 const MAX_FILE_SIZE_MB = 20;
+
+useEffect(() => {
+  const handleGlobalKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (text.trim() || files.length > 0) {
+        handleUpload();
+      }
+    }
+  };
+
+  window.addEventListener("keydown", handleGlobalKeyDown);
+  return () => {
+    window.removeEventListener("keydown", handleGlobalKeyDown);
+  };
+}, [text, files]);
+
 
 const Upload = () => {
   const navigate = useNavigate();
@@ -103,6 +121,15 @@ const Upload = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if(e.key === "Enter" && !e.shiftKey){
+      e.preventDefault();
+      if(text.trim() || files.length>0){
+        handleUpload();
+      }
+    }
+  };
+
    const handleRemoveFile = (index) => {
       setFiles((prevFiles) => prevFiles.filter((_, idx) => idx !== index));
     };
@@ -130,6 +157,7 @@ const Upload = () => {
           value={text}
           onChange={handleTextChange}
           rows={6}
+          onKeyDown={handleKeyPress}
         />
         <h2>or</h2>
         <h3>Select File(s) - max size 20mb</h3>
@@ -147,6 +175,7 @@ const Upload = () => {
             className={ustyle.inputFileBtnHidden}
             multiple
             onChange={handleFileChange}
+            onKeyDown={handleKeyPress}
             accept="*/*"
           />
         </div>

@@ -133,6 +133,12 @@ function Retrieve() {
               placeholder="Code Field"
               onChange={(e) => setInputCode(e.target.value)}
               onFocus={() => setActiveCode("")}
+              onKeyDown={(e)=> {
+                if(e.key==="Enter"){
+                  e.preventDefault();
+                  handleSubmit();
+                }
+              }}
             />
             <br />
             <button className={rstyle.submitBtn} onClick={() => handleSubmit()}>
