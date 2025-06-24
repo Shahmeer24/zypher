@@ -155,8 +155,8 @@ const Upload = () => {
         <button className={ustyle.navBtn} onClick={() => navigate("/retrieve")}>
           want to retrieve?
         </button>
-        <h3>Enter Text</h3>
-        <h3>Press Enter to Upload. Shift+Enter for newline</h3>
+        <h3 className={ustyle.secondaryHeading}>Enter Text</h3>
+        <h3 className={ustyle.secondaryHeading}>Press Enter to Upload. Shift+Enter for newline</h3>
         <textarea
           className={ustyle.inputTextarea}
           placeholder="Text Field"
