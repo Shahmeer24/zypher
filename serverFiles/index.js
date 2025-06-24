@@ -10,10 +10,12 @@ const FRONTEND_URL = "https://zypher24.vercel.app";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: `${FRONTEND_URL}`,
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: `${FRONTEND_URL}`,
+    credentials: true,
+  })
+);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const { incrementUploadCounter, getUploadCounter } = require("./redis");
@@ -22,7 +24,6 @@ let uploadCount = 0;
 (async () => {
   uploadCount = await getUploadCounter();
 })();
-
 
 const fileStore = new Map();
 const uploadDir = path.join(__dirname, "uploads");
@@ -35,7 +36,7 @@ function generateCode(length = 4) {
   for (let i = 0; i < length; i++) {
     code += Math.floor(Math.random() * 10);
   }
-  return code.padStart(length,"0");
+  return code.padStart(length, "0");
 }
 
 const storage = multer.diskStorage({
@@ -63,8 +64,8 @@ app.post(
   express.urlencoded({ extended: true }),
   async (req, res) => {
     let code;
-    do{
-      code=generateCode(4);
+    do {
+      code = generateCode(4);
     } while (fileStore.has(code));
     const expiry = Date.now() + 10 * 60 * 1000;
 
@@ -119,7 +120,7 @@ app.post(
       fileStore.set(code, {
         type: "zip",
         filename: zipFilename,
-        originalFilenames: req.files.map(f => f.originalname),
+        originalFilenames: req.files.map((f) => f.originalname),
         filepath: zipPath,
         expiry,
       });
@@ -197,12 +198,14 @@ app.get("/api/stats", async (req, res) => {
   res.json({ uploadCount: count });
 });
 
-
 cron.schedule("* * * * *", () => {
   const now = Date.now();
   for (const [code, entry] of fileStore.entries()) {
     if (entry.expiry < now) {
-      if ((entry.type === "file" || entry.type === "zip") && fs.existsSync(entry.filepath)) {
+      if (
+        (entry.type === "file" || entry.type === "zip") &&
+        fs.existsSync(entry.filepath)
+      ) {
         fs.unlinkSync(entry.filepath);
       }
       fileStore.delete(code);
