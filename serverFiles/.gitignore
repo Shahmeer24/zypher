@@ -1,3 +1,4 @@
 node_modules/
+resetCounter.js
 .env
 .gitignore

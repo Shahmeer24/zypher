@@ -11,6 +11,7 @@ import { faFile, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL } from "../config";
 
 const MAX_FILE_SIZE_MB = 20;
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 const Upload = () => {
   const navigate = useNavigate();
@@ -23,7 +24,12 @@ const Upload = () => {
 
   useEffect(() => {
   const handleGlobalKeyDown = (e) => {
+    const tag = e.target.tagName.toLowerCase();
+    const isTypingArea = tag === "textarea" || tag === "input";
     if (e.key === "Enter" && !e.shiftKey) {
+      if(isMobile && isTypingArea){ //handles default Enter button functionality based on device
+        return;
+      }
       e.preventDefault();
       if (text.trim() || files.length > 0) {
         handleUpload();
@@ -150,6 +156,7 @@ const Upload = () => {
           want to retrieve?
         </button>
         <h3>Enter Text</h3>
+        <h3>Press Enter to Upload. Shift+Enter for newline</h3>
         <textarea
           className={ustyle.inputTextarea}
           placeholder="Text Field"
