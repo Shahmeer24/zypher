@@ -1,0 +1,91 @@
+body{
+    background: linear-gradient(135deg, #18122b 60%, #393053 100%);
+}
+.aboutContainer {
+  padding: 5rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+.aboutTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #a182d4;
+}
+
+.aboutDescription {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #ddd;
+  text-align: justify;
+}
+
+.githubBtn {
+  display: inline-flex;
+  align-items: center;
+  width: 10rem;
+  gap: 8px;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(135deg, #333333, #000000);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  margin-top:2rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.githubBtn:hover {
+  background: linear-gradient(135deg, #555555, #1a1a1a);
+}
+
+.footer {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.footer :last-child {
+  color: #a182d4;
+  font-size: 1.6rem;
+  padding-left: 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .aboutContainer {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .aboutTitle {
+    font-size: 2rem;
+  }
+
+  .aboutDescription {
+    font-size: 1rem;
+    text-align: justify;
+    padding: 1rem;
+  }
+
+  .githubBtn {
+    justify-content: center;
+    width: 50%;
+    margin-top: 1rem;
+  }
+
+  .footer:last-child {
+    padding-top:2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+}
