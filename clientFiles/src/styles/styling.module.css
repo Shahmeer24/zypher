@@ -12,11 +12,13 @@
 }
 ::selection {
   background-color: #5f45b4;
+  color: #eeeeee;
 }
 
 html,body{
-  overflow: hidden;
+  overflow: hidden !important;
   height: 100%;
+  width: 100%;
 }
 
 /* MAIN STYLING */
