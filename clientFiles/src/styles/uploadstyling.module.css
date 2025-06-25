@@ -1,4 +1,5 @@
-html,body{
+html,
+body {
   overflow-y: auto !important;
 }
 
@@ -19,6 +20,15 @@ body {
   padding-top: 4rem;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #18122b 60%, #393053 100%);
+}
+
+/* LOGO */
+.mainLogo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 5rem;
+  z-index: 1000;
 }
 
 .secondaryHeading {
@@ -241,6 +251,11 @@ body {
 @media (max-width: 600px) {
   .uploadContainer {
     padding-top: 2rem;
+  }
+  .mainLogo {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 3.2rem;
   }
   .inputTextarea,
   .dropArea {

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AlertBox from "../components/AlertBox";
 import Spinner from "../components/Spinner";
-import style from "../styles/styling.module.css";
+// import style from "../styles/styling.module.css";
 import ustyle from "../styles/uploadstyling.module.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -150,7 +150,7 @@ const Upload = () => {
   return (
     <>
       <a href="/">
-        <img src="../LOGO-noBG.png" alt="Logo" className={style.mainLogo} />
+        <img src="../LOGO-noBG.png" alt="Logo" className={ustyle.mainLogo} />
       </a>
       <div className={ustyle.uploadContainer}>
         <h2>Upload Data</h2>
