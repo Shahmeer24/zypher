@@ -20,7 +20,8 @@ body {
   min-width: 100vw;
   color: var(--font-color);
   font-family: var(--font-family);
-  scroll-behavior: smooth;
+  overflow: hidden;
+  /* scroll-behavior: smooth; */
   margin: 0;
   padding: 0;
 

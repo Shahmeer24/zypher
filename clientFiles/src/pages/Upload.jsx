@@ -245,17 +245,16 @@ const Upload = () => {
               </p>
             </div>
             <div className={ustyle.uploadResult}>
-              <strong>Retrieval QR</strong>{" "} <br />
+              <strong>Retrieval QR</strong> <br />
               <QRCodeCanvas
-              value = {uploadResult.link}
-              size={180}
-              bgColor={"#eeeeee"}
-              fgColor={"#5606a1"}
-              level={"H"}
-              marginSize={"2"}
-              id={ustyle.resultQR}
-              >
-              </QRCodeCanvas>
+                value={uploadResult.link}
+                size={180}
+                bgColor={"#eeeeee"}
+                fgColor={"#5606a1"}
+                level={"H"}
+                marginSize={"2"}
+                id={ustyle.resultQR}
+              ></QRCodeCanvas>
             </div>
           </div>
         )}

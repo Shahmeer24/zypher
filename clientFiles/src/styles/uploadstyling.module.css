@@ -115,26 +115,24 @@ body {
   max-width: 100%;
   padding: 5px 0;
 }
-.fileName{
-  flex:1;
+.fileName {
+  flex: 1;
   max-width: 80%;
-  overflow:hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin-left:8px;
-  margin-right:8px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
-.trashIcon{
+.trashIcon {
   margin-right: 10px;
   cursor: pointer;
   color: #eba4a4;
 }
 
-.trashIcon:hover{
-  color:#ff4c4c;
+.trashIcon:hover {
+  color: #ff4c4c;
 }
-
-
 
 .uploadBtn,
 .resetBtn {
@@ -171,7 +169,7 @@ body {
   text-decoration: underline;
 }
 
-.uploadResultContainer{
+.uploadResultContainer {
   display: flex;
   flex-direction: row;
   padding: 1rem;
@@ -198,13 +196,13 @@ body {
   overflow-wrap: anywhere;
   text-decoration-color: #ffffff;
 }
-#resultQR{
+#resultQR {
   margin-top: 4px;
   border-radius: 8px;
 }
 
-.textDecor{
-    text-decoration-color: white;
+.textDecor {
+  text-decoration-color: white;
 }
 
 .copyBtn {
@@ -233,6 +231,7 @@ body {
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+  margin-left: 1.1rem;
 }
 
 @media (max-width: 600px) {
@@ -242,7 +241,7 @@ body {
   .inputTextarea,
   .dropArea {
     width: 80vw;
-    
+
     font-size: 1rem;
     padding: 0.7rem;
   }
@@ -251,7 +250,7 @@ body {
     min-width: 0;
     font-size: 1rem;
   }
-  .uploadResultContainer{
+  .uploadResultContainer {
     flex-direction: column;
   }
   .uploadResult {
@@ -261,9 +260,9 @@ body {
     max-width: 80vw;
   }
 
- .fileName {
-   max-width: 60vw;
-   font-size: 0.9rem;
+  .fileName {
+    max-width: 60vw;
+    font-size: 0.9rem;
   }
   #resultLink {
     word-break: break-all;
