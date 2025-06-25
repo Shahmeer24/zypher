@@ -119,7 +119,7 @@ function Retrieve() {
 
       <div className={rstyle.downloadWrapper}>
         <div className={rstyle.mainSection}>
-          <h1>Enter the code to retrieve data</h1>
+          <h2>Enter the code to retrieve data</h2>
           <button className={rstyle.navBtn} onClick={() => navigate("/upload")}>
             want to upload?
           </button>
