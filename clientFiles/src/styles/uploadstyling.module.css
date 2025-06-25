@@ -184,7 +184,7 @@ body {
   width: 16rem;
   background: rgba(255, 255, 255, 0.04);
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 #resultCode,
@@ -197,6 +197,10 @@ body {
   word-break: break-all;
   overflow-wrap: anywhere;
   text-decoration-color: #ffffff;
+}
+#resultQR{
+  margin-top: 4px;
+  border-radius: 8px;
 }
 
 .textDecor{

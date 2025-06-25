@@ -253,6 +253,7 @@ const Upload = () => {
               fgColor={"#5606a1"}
               level={"H"}
               marginSize={"2"}
+              id={ustyle.resultQR}
               >
               </QRCodeCanvas>
             </div>
