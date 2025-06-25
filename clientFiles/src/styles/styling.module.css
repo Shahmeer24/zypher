@@ -14,13 +14,17 @@
   background-color: #5f45b4;
 }
 
+html,body{
+  overflow: hidden;
+  height: 100%;
+}
+
 /* MAIN STYLING */
 body {
   min-height: 100vh;
   min-width: 100vw;
   color: var(--font-color);
   font-family: var(--font-family);
-  overflow: hidden;
   /* scroll-behavior: smooth; */
   margin: 0;
   padding: 0;
