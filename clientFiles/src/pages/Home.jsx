@@ -8,8 +8,16 @@ import { BASE_URL } from "../config";
 
 function Home() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
-    <div className={style.noScroll}>
+    <div>
       <a href="/">
         <img src="../LOGO-noBG.png" alt="Logo" className={style.mainLogo} />
       </a>

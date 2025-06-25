@@ -27,11 +27,6 @@ body {
 
   -webkit-tap-highlight-color: transparent;
 }
-.noScroll {
-  overflow: hidden !important;
-  height: 100%;
-  width: 100%;
-}
 button {
   outline: none;
 }
