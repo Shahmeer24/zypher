@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import style from "../styles/styling.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
