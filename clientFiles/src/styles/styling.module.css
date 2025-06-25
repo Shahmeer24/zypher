@@ -15,7 +15,6 @@
   color: #eeeeee;
 }
 
-
 /* MAIN STYLING */
 body {
   min-height: 100vh;
@@ -28,14 +27,16 @@ body {
 
   -webkit-tap-highlight-color: transparent;
 }
+.noScroll {
+  overflow: hidden !important;
+  height: 100%;
+  width: 100%;
+}
 button {
   outline: none;
 }
 .mainContainer {
   background-image: linear-gradient(135deg, #18122b 60%, #393053 100%);
-  overflow: hidden !important;
-  height: 100%;
-  width: 100%;
 }
 
 /* LOGO */
@@ -155,7 +156,7 @@ button {
 }
 
 .footer button {
-  color: white;  
+  color: white;
   border: none;
   font-size: 1rem;
   transition: color 0.2s;

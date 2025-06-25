@@ -9,7 +9,7 @@ import { BASE_URL } from "../config";
 function Home() {
   const navigate = useNavigate();
   return (
-    <>
+    <div className={style.noScroll}>
       <a href="/">
         <img src="../LOGO-noBG.png" alt="Logo" className={style.mainLogo} />
       </a>
@@ -40,7 +40,7 @@ function Home() {
           <button onClick={() => navigate("/about")}>About Zypher</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
