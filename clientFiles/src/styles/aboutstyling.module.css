@@ -1,3 +1,6 @@
+html,body{
+  overflow-y: auto !important;
+}
 body{
     background: linear-gradient(135deg, #18122b 60%, #393053 100%);
 }
