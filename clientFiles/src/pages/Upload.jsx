@@ -245,7 +245,7 @@ const Upload = () => {
               </p>
             </div>
             <div className={ustyle.uploadResult}>
-              <strong>Retrieval QR</strong>{" "}
+              <strong>Retrieval QR</strong>{" "} <br />
               <QRCodeCanvas
               value = {uploadResult.link}
               size={180}
