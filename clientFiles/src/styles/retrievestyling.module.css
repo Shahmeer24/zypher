@@ -1,6 +1,3 @@
-html, body {
-  overflow-y: auto !important;
-}
 .downloadWrapper {
   display: flex;
   justify-content: center;
@@ -23,6 +20,15 @@ html, body {
   gap: 1.5rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* LOGO */
+.mainLogo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 5rem;
+  z-index: 1000;
 }
 
 .textBox {
@@ -49,7 +55,7 @@ html, body {
 
 .copyBtn {
   margin-top: 0.5rem;
-  width:6rem;
+  width: 6rem;
   padding: 0.5rem 1.2rem;
   border-radius: 0.5rem;
   background: linear-gradient(135deg, #a259ff 0%, #5f2eea 100%);
@@ -143,7 +149,7 @@ html, body {
 .downloadBtn {
   background: linear-gradient(90deg, #8251d2 60%, #a182d4 100%);
   border: none;
-  width:10rem;
+  width: 10rem;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -191,6 +197,11 @@ html, body {
     margin-right: auto;
     text-align: center;
   }
+  .mainLogo {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 3.2rem;
+  }
   .downloadWrapper {
     flex-direction: column;
     gap: 1.2rem;
@@ -212,7 +223,7 @@ html, body {
     font-size: 1rem;
     padding: 0.7rem;
   }
-  .filename{
+  .filename {
     max-width: 80vw;
   }
   .downloadBtn,
@@ -224,7 +235,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
   }
-  .downloadBtn{
-    width:10rem;
+  .downloadBtn {
+    width: 10rem;
   }
 }

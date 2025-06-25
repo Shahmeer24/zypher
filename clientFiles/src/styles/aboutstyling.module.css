@@ -1,6 +1,3 @@
-html,body{
-  overflow-y: auto !important;
-}
 body{
     background: linear-gradient(135deg, #18122b 60%, #393053 100%);
 }
@@ -9,6 +6,14 @@ body{
   max-width: 800px;
   margin: 0 auto;
   color: white;
+}
+/* LOGO */
+.mainLogo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 5rem;
+  z-index: 1000;
 }
 
 .aboutTitle {
@@ -66,6 +71,12 @@ body{
   .aboutContainer {
     padding: 1rem;
     text-align: center;
+  }
+
+  .mainLogo {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 3.2rem;
   }
 
   .aboutTitle {

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import AlertBox from "../components/AlertBox.jsx";
 import Spinner from "../components/Spinner.jsx";
-import style from "../styles/styling.module.css";
+// import style from "../styles/styling.module.css";
 import rstyle from "../styles/retrievestyling.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faCopy } from "@fortawesome/free-solid-svg-icons";
@@ -114,7 +114,7 @@ function Retrieve() {
   return (
     <>
       <a href="/">
-        <img src="../LOGO-noBG.png" alt="Logo" className={style.mainLogo} />
+        <img src="../LOGO-noBG.png" alt="Logo" className={rstyle.mainLogo} />
       </a>
 
       <div className={rstyle.downloadWrapper}>

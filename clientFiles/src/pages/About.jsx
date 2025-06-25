@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import style from "../styles/styling.module.css";
+// import style from "../styles/styling.module.css";
 import astyle from "../styles/aboutstyling.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -18,7 +18,7 @@ function About() {
   return (
     <>
       <a href="/">
-        <img src="../LOGO-noBG.png" alt="Logo" className={style.mainLogo} />
+        <img src="../LOGO-noBG.png" alt="Logo" className={astyle.mainLogo} />
       </a>
       <div className={astyle.aboutContainer}>
         <h1 className={astyle.aboutTitle}>Zypher</h1>
