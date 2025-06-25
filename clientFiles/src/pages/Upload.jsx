@@ -8,6 +8,7 @@ import ustyle from "../styles/uploadstyling.module.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { QRCodeCanvas } from "qrcode.react";
 import { BASE_URL } from "../config";
 
 const MAX_FILE_SIZE_MB = 20;
@@ -23,25 +24,26 @@ const Upload = () => {
   const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-  const handleGlobalKeyDown = (e) => {
-    const tag = e.target.tagName.toLowerCase();
-    const isTypingArea = tag === "textarea" || tag === "input";
-    if (e.key === "Enter" && !e.shiftKey) {
-      if(isMobile && isTypingArea){ //handles default Enter button functionality based on device
-        return;
+    const handleGlobalKeyDown = (e) => {
+      const tag = e.target.tagName.toLowerCase();
+      const isTypingArea = tag === "textarea" || tag === "input";
+      if (e.key === "Enter" && !e.shiftKey) {
+        if (isMobile && isTypingArea) {
+          //handles default Enter button functionality based on device
+          return;
+        }
+        e.preventDefault();
+        if (text.trim() || files.length > 0) {
+          handleUpload();
+        }
       }
-      e.preventDefault();
-      if (text.trim() || files.length > 0) {
-        handleUpload();
-      }
-    }
-  };
+    };
 
-  window.addEventListener("keydown", handleGlobalKeyDown);
-  return () => {
-    window.removeEventListener("keydown", handleGlobalKeyDown);
-  };
-}, [text, files]);
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleGlobalKeyDown);
+    };
+  }, [text, files]);
 
   const showAlert = (message, type = "error") => {
     setAlert({ message, type, visible: true });
@@ -156,7 +158,9 @@ const Upload = () => {
           want to retrieve?
         </button>
         <h3 className={ustyle.secondaryHeading}>Enter Text</h3>
-        <h3 className={ustyle.secondaryHeading}>Press Enter to Upload. Shift+Enter for newline</h3>
+        <h3 className={ustyle.secondaryHeading}>
+          Press Enter to Upload. Shift+Enter for newline
+        </h3>
         <textarea
           className={ustyle.inputTextarea}
           placeholder="Text Field"
@@ -220,24 +224,37 @@ const Upload = () => {
         {uploading && <Spinner />}
 
         {uploadResult?.code && uploadResult?.link && (
-          <div className={ustyle.uploadResult}>
-            <p>
-              <strong>Code:</strong>{" "}
-              <p id={ustyle.resultCode}>{uploadResult.code}</p>
-            </p>
-            <p>
-              <strong>Link:</strong>{" "}
-              <a
-                href={uploadResult.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={ustyle.textDecor}
+          <div>
+            <div className={ustyle.uploadResult}>
+              <p>
+                <strong>Code:</strong>{" "}
+                <p id={ustyle.resultCode}>{uploadResult.code}</p>
+              </p>
+              <p>
+                <strong>Link:</strong>{" "}
+                <a
+                  href={uploadResult.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={ustyle.textDecor}
+                >
+                  <p id={ustyle.resultLink} className={ustyle.textDecor}>
+                    {uploadResult.link}
+                  </p>
+                </a>
+              </p>
+            </div>
+            <div className={ustyle.uploadResult}>
+              <QRCodeCanvas
+              value = {uploadResult.link}
+              size={160}
+              bgColor={"#ffffff"}
+              fgColor={"#000000"}
+              level={"H"}
+              marginSize={"5"}
               >
-                <p id={ustyle.resultLink} className={ustyle.textDecor}>
-                  {uploadResult.link}
-                </p>
-              </a>
-            </p>
+              </QRCodeCanvas>
+            </div>
           </div>
         )}
         {alert.visible && (
