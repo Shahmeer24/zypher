@@ -15,11 +15,6 @@
   color: #eeeeee;
 }
 
-html,body{
-  overflow: hidden !important;
-  height: 100%;
-  width: 100%;
-}
 
 /* MAIN STYLING */
 body {
@@ -38,6 +33,9 @@ button {
 }
 .mainContainer {
   background-image: linear-gradient(135deg, #18122b 60%, #393053 100%);
+  overflow: hidden !important;
+  height: 100%;
+  width: 100%;
 }
 
 /* LOGO */
