@@ -171,6 +171,11 @@ body {
   text-decoration: underline;
 }
 
+.uploadResultContainer{
+  display: flex;
+  flex-direction: row;
+}
+
 .uploadResult {
   border: 1px solid #8251d2;
   border-radius: 14px;

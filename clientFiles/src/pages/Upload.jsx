@@ -224,7 +224,7 @@ const Upload = () => {
         {uploading && <Spinner />}
 
         {uploadResult?.code && uploadResult?.link && (
-          <div>
+          <div className={ustyle.uploadResultContainer}>
             <div className={ustyle.uploadResult}>
               <p>
                 <strong>Code:</strong>{" "}
