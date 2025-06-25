@@ -32,7 +32,7 @@ function About() {
           making it ideal for quick sharing. Built with a React frontend and
           Express backend, Zypher is lightweight, responsive, and thoughtfully
           designed to work seamlessly across devices. It uses file zipping for
-          multiple uploads, harnesses real-time alerts, and infinite
+          multiple uploads, harnesses real-time alerts, and provides infinite
           availablility in the time frame.
         </p>
 
