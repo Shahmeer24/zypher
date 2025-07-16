@@ -157,61 +157,69 @@ const Upload = () => {
         <button className={ustyle.navBtn} onClick={() => navigate("/retrieve")}>
           want to retrieve?
         </button>
-        <h3 className={ustyle.secondaryHeading}>Enter Text</h3>
-        <h3 className={ustyle.secondaryHeading}>
-          Press Enter to Upload. Shift+Enter for newline
-        </h3>
-        <textarea
-          className={ustyle.inputTextarea}
-          placeholder="Text Field"
-          value={text}
-          onChange={handleTextChange}
-          rows={6}
-        />
-        <h2>or</h2>
-        <h3>Select File(s) - max size 20mb</h3>
-        <div
-          className={ustyle.dropArea}
-          onDragOver={(e) => e.preventDefault()}
-          onDrop={handleDrop}
-        >
-          <label htmlFor="fileUpload" className={ustyle.inputFileBtn}>
-            Browse or Drop Files Here
-          </label>
-          <input
-            type="file"
-            id="fileUpload"
-            className={ustyle.inputFileBtnHidden}
-            multiple
-            onChange={handleFileChange}
-            accept="*/*"
-          />
-        </div>
-        <div className={ustyle.fileList}>
-          {files.length > 0 ? (
-            <ul>
-              <p id={ustyle.defaultTxt}>Selected Files:</p>
-              {files.map((file, index) => (
-                <li key={index} className={ustyle.fileItem}>
-                  <FontAwesomeIcon
-                    icon={faTrash}
-                    className={ustyle.trashIcon}
-                    onClick={() => handleRemoveFile(index)}
-                    title="Remove File"
-                  />
-                  <FontAwesomeIcon
-                    icon={faFile}
-                    style={{ marginRight: "8px" }}
-                  />
-                  <span className={ustyle.fileName} title={file.name}>
-                    {file.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No files selected</p>
-          )}
+        <div className={ustyle.uploadSection}>
+          <div className={ustyle.textUploadSection}>
+            <h3 className={ustyle.secondaryHeading}>Enter Text</h3>
+            <h3 className={ustyle.secondaryHeading}>
+              Press Enter to Upload. Shift+Enter for newline
+            </h3>
+            <textarea
+              className={ustyle.inputTextarea}
+              placeholder="Text Field"
+              value={text}
+              onChange={handleTextChange}
+              rows={6}
+            />
+          </div>
+          <div><h2>or</h2></div>
+          
+          <div className={ustyle.fileUploadSection}>
+            <h3 className={ustyle.secondaryHeading}>Select File(s) - max size 20mb</h3>
+             <h3 className={ustyle.secondaryHeading}>Upload multiple files together to create a zip file</h3>
+            <div
+              className={ustyle.dropArea}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={handleDrop}
+            >
+              <label htmlFor="fileUpload" className={ustyle.inputFileBtn}>
+                Browse or Drop Files Here
+              </label>
+              <input
+                type="file"
+                id="fileUpload"
+                className={ustyle.inputFileBtnHidden}
+                multiple
+                onChange={handleFileChange}
+                accept="*/*"
+              />
+            </div>
+            <div className={ustyle.fileList}>
+              {files.length > 0 ? (
+                <ul>
+                  <p id={ustyle.defaultTxt}>Selected Files:</p>
+                  {files.map((file, index) => (
+                    <li key={index} className={ustyle.fileItem}>
+                      <FontAwesomeIcon
+                        icon={faTrash}
+                        className={ustyle.trashIcon}
+                        onClick={() => handleRemoveFile(index)}
+                        title="Remove File"
+                      />
+                      <FontAwesomeIcon
+                        icon={faFile}
+                        style={{ marginRight: "8px" }}
+                      />
+                      <span className={ustyle.fileName} title={file.name}>
+                        {file.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className={ustyle.defaultEntry}>No files selected</p>
+              )}
+            </div>
+          </div>
         </div>
         <div className={ustyle.btnRow}>
           <button className={ustyle.uploadBtn} onClick={handleUpload}>

@@ -16,6 +16,24 @@ body {
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #18122b 60%, #393053 100%);
 }
+.uploadSection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.textUploadSection {
+  margin-left: 2rem;
+  margin-right: 6rem;
+}
+.fileUploadSection {
+  margin-right: 2rem;
+  margin-left: 6rem;
+  height: 28rem;
+  min-height: 28rem;
+}
 
 /* LOGO */
 .mainLogo {
@@ -27,7 +45,7 @@ body {
 }
 
 .secondaryHeading {
-  width: 80vw;
+  /* width: 80vw; */
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -36,9 +54,9 @@ body {
 .inputTextarea {
   width: 100%;
   width: 32rem;
-  height: 10rem;
+  height: 12rem;
   resize: none;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.04);
   color: #fff;
   font-size: 1.1rem;
   border: 1.5px solid #8251d2;
@@ -56,6 +74,7 @@ body {
 }
 .inputTextarea:focus {
   border-color: #a182d4;
+   background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 4px 24px 0 #8251d2aa, 0 1.5px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -88,7 +107,8 @@ body {
 .dropArea {
   width: 100%;
   width: 32rem;
-  height: 10rem;
+  height: 9rem;
+  min-height: 8rem;
   border: 2px dashed #8251d2;
   padding: 2.5rem 1rem;
   border-radius: 14px;
@@ -111,6 +131,13 @@ body {
   color: #cfc6e6;
 }
 
+.fileList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
 .fileList li {
   list-style-type: none;
   padding-bottom: 0.4rem;
@@ -120,7 +147,7 @@ body {
 .fileItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 100%;
   padding: 5px 0;
 }
@@ -132,6 +159,9 @@ body {
   white-space: nowrap;
   margin-left: 8px;
   margin-right: 8px;
+}
+.defaultEntry {
+  text-align: center;
 }
 .trashIcon {
   margin-right: 10px;
@@ -236,16 +266,40 @@ body {
 }
 
 .btnRow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: -2rem;
   margin-left: 1.1rem;
+  position: relative;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1360px) {
   .uploadContainer {
     padding-top: 2rem;
+    height:80rem;
+    /* margin-bottom: 5rem; */
+  }
+  .uploadSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 80vw;
+  }
+  .textUploadSection {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .fileUploadSection {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    
   }
   .mainLogo {
     top: 0.5rem;
@@ -255,7 +309,7 @@ body {
   .inputTextarea,
   .dropArea {
     width: 80vw;
-
+    height: 12rem;
     font-size: 1rem;
     padding: 0.7rem;
   }
@@ -283,3 +337,4 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
