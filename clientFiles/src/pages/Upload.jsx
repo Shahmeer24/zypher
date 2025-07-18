@@ -196,7 +196,6 @@ const Upload = () => {
             <div className={ustyle.fileList}>
               {files.length > 0 ? (
                 <ul>
-                  <p id={ustyle.defaultTxt}>Selected Files:</p>
                   {files.map((file, index) => (
                     <li key={index} className={ustyle.fileItem}>
                       <FontAwesomeIcon
