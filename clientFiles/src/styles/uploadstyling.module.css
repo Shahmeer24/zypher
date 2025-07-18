@@ -15,6 +15,7 @@ body {
   padding-top: 4rem;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #18122b 60%, #393053 100%);
+  width:100vw;
 }
 .uploadSection {
   display: flex;
@@ -74,7 +75,7 @@ body {
 }
 .inputTextarea:focus {
   border-color: #a182d4;
-   background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 4px 24px 0 #8251d2aa, 0 1.5px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -136,10 +137,11 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 100%;
+  width: 60%;
   max-height: 6rem;
   overflow-y: auto;
   margin-top: 2rem;
+  margin-left: 8rem;
   padding-bottom: 3rem;
   padding-top: 1rem;
   padding-left: 1rem;
@@ -155,7 +157,7 @@ body {
 }
 .fileItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   max-width: 100%;
   padding: 5px 0;
@@ -171,7 +173,6 @@ body {
 }
 .defaultEntry {
   text-align: center !important;
-  padding-left: 10rem;
 }
 .trashIcon {
   margin-right: 10px;
@@ -196,6 +197,14 @@ body {
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px 0 #6525cb22;
+}
+
+.btnRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1.1rem;
+  position: relative;
 }
 
 .uploadBtn {
@@ -275,19 +284,10 @@ body {
   text-underline-offset: 2px;
 }
 
-.btnRow {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: -2rem;
-  margin-left: 1.1rem;
-  position: relative;
-}
-
 @media (max-width: 1360px) {
   .uploadContainer {
     padding-top: 2rem;
-    height:80rem;
+    height: 80rem;
     /* margin-bottom: 5rem; */
   }
   .uploadSection {
@@ -309,7 +309,6 @@ body {
     height: auto !important;
     min-height: unset !important;
     max-height: unset !important;
-    
   }
   .mainLogo {
     top: 0.5rem;
@@ -333,6 +332,12 @@ body {
   }
   .uploadResult {
     width: 80vw;
+  }
+  .fileList {
+    margin-left: 5rem;
+  }
+  .defaultEntry {
+    margin-left: 3rem;
   }
   .fileItem {
     max-width: 80vw;
