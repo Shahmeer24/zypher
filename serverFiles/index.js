@@ -5,6 +5,7 @@ const path = require("path");
 const fs = require("fs");
 const cron = require("node-cron");
 const archiver = require("archiver");
+const rateLimit = require("express-rate-limit");
 const FRONTEND_URL = "https://zypher24.vercel.app";
 
 const app = express();
@@ -212,6 +213,13 @@ cron.schedule("* * * * *", () => {
     }
   }
 });
+
+const limiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 10,
+  message: "Too many requests, please try again later."
+});
+app.use(limiter);
 
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`);
