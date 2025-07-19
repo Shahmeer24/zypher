@@ -80,7 +80,7 @@ const Upload = () => {
     );
     const totalSize = uniqueFiles.reduce((sum, file) => sum + file.size, 0);
     if (totalSize > MAX_FILE_SIZE_MB * 1024 * 1024) {
-      showAlert("File size exceeds 100MB");
+      showAlert("File size exceeds 20MB");
       return;
     }
     setFiles(uniqueFiles);
