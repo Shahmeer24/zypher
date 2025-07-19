@@ -15,7 +15,7 @@ body {
   padding-top: 4rem;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #18122b 60%, #393053 100%);
-  width:100vw;
+  width: 100vw;
 }
 .uploadSection {
   display: flex;
@@ -137,16 +137,19 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 60%;
+  width: 26rem;
   max-height: 6rem;
   overflow-y: auto;
+  overflow-x: hidden;
   margin-top: 2rem;
   margin-left: 8rem;
   padding-bottom: 3rem;
   padding-top: 1rem;
   padding-left: 1rem;
   z-index: 9999;
-  position: relative;
+  /* position: relative; */
+
+  /* border: 2px solid black; */
 }
 
 .fileList li {
@@ -158,13 +161,13 @@ body {
 .fileItem {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 100%;
   padding: 5px 0;
 }
 .fileName {
   flex: 1;
-  max-width: 80%;
+  max-width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -173,6 +176,7 @@ body {
 }
 .defaultEntry {
   text-align: center !important;
+  margin-left: 4rem;
 }
 .trashIcon {
   margin-right: 10px;
@@ -334,10 +338,12 @@ body {
     width: 80vw;
   }
   .fileList {
-    margin-left: 5rem;
+    width: 80vw;
+    margin-left: 0;
+    overflow-x: hidden;
   }
   .defaultEntry {
-    margin-left: 3rem;
+    margin-left: 6.5rem;
   }
   .fileItem {
     max-width: 80vw;
