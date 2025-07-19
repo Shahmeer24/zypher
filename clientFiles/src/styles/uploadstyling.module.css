@@ -207,7 +207,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: 1.1rem;
+  /* margin-left: 1.1rem; */
   position: relative;
 }
 
@@ -335,17 +335,25 @@ body {
     min-width: 0;
     font-size: 1rem;
   }
-  .uploadResultContainer {
-    flex-direction: column;
-  }
-  .uploadResult {
-    width: 80vw;
-  }
+
   .fileList {
     width: 80vw;
     margin-left: 0;
     overflow-x: hidden;
   }
+
+  .btnRow {
+    margin-left: 1.1rem;
+  }
+
+  .uploadResultContainer {
+    flex-direction: column;
+  }
+
+  .uploadResult {
+    width: 80vw;
+  }
+
   .defaultEntry {
     margin-left: 0%;
   }

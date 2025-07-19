@@ -217,7 +217,7 @@ cron.schedule("* * * * *", () => {
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000,
   max: 10,
-  message: "Too many requests, please try again later."
+  message: "Too many requests, please try again later.",
 });
 app.use(limiter);
 

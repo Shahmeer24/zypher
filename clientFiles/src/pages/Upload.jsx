@@ -171,11 +171,17 @@ const Upload = () => {
               rows={6}
             />
           </div>
-          <div><h2>or</h2></div>
-          
+          <div>
+            <h2>or</h2>
+          </div>
+
           <div className={ustyle.fileUploadSection}>
-            <h3 className={ustyle.secondaryHeading}>Select File(s) - max size 20mb</h3>
-             <h3 className={ustyle.secondaryHeading}>Upload multiple files together to create a zip file</h3>
+            <h3 className={ustyle.secondaryHeading}>
+              Select File(s) - max size 20mb
+            </h3>
+            <h3 className={ustyle.secondaryHeading}>
+              Upload multiple files together to create a zip file
+            </h3>
             <div
               className={ustyle.dropArea}
               onDragOver={(e) => e.preventDefault()}
@@ -251,6 +257,7 @@ const Upload = () => {
                 </a>
               </p>
             </div>
+
             <div className={ustyle.uploadResult}>
               <strong id={ustyle.resultHead}>Retrieval QR</strong> <br />
               <QRCodeCanvas
