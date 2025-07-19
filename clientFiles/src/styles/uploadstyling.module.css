@@ -295,7 +295,7 @@ body {
 @media (max-width: 1360px) {
   .uploadContainer {
     padding-top: 2rem;
-    height: 80rem;
+    height: 80%;
     /* margin-bottom: 5rem; */
   }
   .uploadSection {
