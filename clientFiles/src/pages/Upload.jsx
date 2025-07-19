@@ -234,11 +234,11 @@ const Upload = () => {
           <div className={ustyle.uploadResultContainer}>
             <div className={ustyle.uploadResult}>
               <p>
-                <strong>Retrieval Code</strong>{" "}
+                <strong id={ustyle.resultHead}>Retrieval Code</strong>{" "}
                 <p id={ustyle.resultCode}>{uploadResult.code}</p>
               </p>
               <p>
-                <strong>Retrieval Link</strong>{" "}
+                <strong id={ustyle.resultHead}>Retrieval Link</strong>{" "}
                 <a
                   href={uploadResult.link}
                   target="_blank"
@@ -252,7 +252,7 @@ const Upload = () => {
               </p>
             </div>
             <div className={ustyle.uploadResult}>
-              <strong>Retrieval QR</strong> <br />
+              <strong id={ustyle.resultHead}>Retrieval QR</strong> <br />
               <QRCodeCanvas
                 value={uploadResult.link}
                 size={180}

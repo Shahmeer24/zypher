@@ -241,22 +241,26 @@ body {
   border: 1px solid #8251d2;
   border-radius: 14px;
   padding: 1rem;
-  width: 16rem;
+  max-width: 16rem;
+  min-width: 16rem;
   background: rgba(255, 255, 255, 0.04);
   text-align: center;
   margin: 1rem;
 }
 
+#resultHead {
+  color: #a182d4;
+}
 #resultCode,
 #resultLink {
   font-size: 1.2rem;
-  color: #a182d4;
-  text-decoration-color: white;
+  color: #fff;
+  text-decoration-color: #a182d4;
 }
 #resultLink {
   word-break: break-all;
   overflow-wrap: anywhere;
-  text-decoration-color: #ffffff;
+  text-decoration-color: #4c0faf;
 }
 #resultQR {
   margin-top: 4px;
@@ -264,7 +268,7 @@ body {
 }
 
 .textDecor {
-  text-decoration-color: white;
+  text-decoration-color: #a182d4;
 }
 
 .copyBtn {
@@ -343,7 +347,7 @@ body {
     overflow-x: hidden;
   }
   .defaultEntry {
-    margin-left: 6.5rem;
+    margin-left: 0%;
   }
   .fileItem {
     max-width: 80vw;
