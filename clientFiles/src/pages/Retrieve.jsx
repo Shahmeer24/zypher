@@ -128,6 +128,8 @@ function Retrieve() {
             <input
               className={rstyle.inputField}
               type="text"
+              inputMode="numeric"
+              pattern="\d*"
               value={inputCode}
               maxLength={4}
               placeholder="Code Field"
@@ -159,7 +161,7 @@ function Retrieve() {
             />
           )}
 
-          {activeCode && !fileReady && (
+          {activeCode && !fileReady && alert.type && (
             <p className={rstyle.waitingMessage}>Fetching file...</p>
           )}
 
