@@ -6,7 +6,8 @@ const fs = require("fs");
 const cron = require("node-cron");
 const archiver = require("archiver");
 const rateLimit = require("express-rate-limit");
-const FRONTEND_URL = "zypher24.vercel.app";
+const FRONTEND_URL = "https://zypher24.vercel.app";
+const FRONTEND_URL_STRIP = "zypher24.vercel.app";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -135,7 +136,7 @@ app.post(
 
       return res.status(200).json({
         code,
-        link: `${FRONTEND_URL}/retrieve/${code}`,
+        link: `${FRONTEND_URL_STRIP}/retrieve/${code}`,
         filename: zipFilename,
         type: "zip",
       });
