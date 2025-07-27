@@ -6,7 +6,7 @@ const fs = require("fs");
 const cron = require("node-cron");
 const archiver = require("archiver");
 const rateLimit = require("express-rate-limit");
-const RateLimitRedisStore = require("rate-limit-redis");
+const RateLimitRedisStore = require("rate-limit-redis").default;
 const Redis = require("ioredis");
 const redisClient = new Redis(process.env.REDIS_URL);
 const FRONTEND_URL = "https://zypher24.vercel.app";
@@ -59,7 +59,7 @@ const upload = multer({
 
 const limiter = rateLimit({
   store: new RateLimitRedisStore({
-    sendCommand: (...args)=> redisClient.call(...args),
+    sendCommand: (...args) => redisClient.call(...args),
   }),
   windowMs: 1 * 60 * 1000,
   max: 10,
@@ -228,8 +228,6 @@ cron.schedule("* * * * *", () => {
     }
   }
 });
-
-
 
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`);
