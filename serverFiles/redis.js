@@ -1,23 +1,14 @@
 require("dotenv").config();
-const fetch = require("node-fetch");
-
-const REDIS_URL = process.env.REDIS_URL;
-const AUTH_TOKEN = process.env.REDIS_TOKEN;
+const Redis = require("ioredis");
+const redis = new Redis(process.env.REDIS_URL);
 
 async function incrementUploadCounter() {
-  const response = await fetch(`${REDIS_URL}/incr/uploadCounter`, {
-    headers: { Authorization: AUTH_TOKEN }
-  });
-  const data = await response.json();
-  return data.result;
+  return await redis.incr("uploadCounter");
 }
 
 async function getUploadCounter() {
-  const response = await fetch(`${REDIS_URL}/get/uploadCounter`, {
-    headers: { Authorization: AUTH_TOKEN }
-  });
-  const data = await response.json();
-  return parseInt(data.result || "0", 10);
+  const count = await redis.get("uploadCounter");
+  return parseInt(count) || 0;
 }
 
 module.exports = { incrementUploadCounter, getUploadCounter };
