@@ -12,6 +12,7 @@ const redisClient = new Redis(process.env.REDIS_URL);
 const FRONTEND_URL = "https://zypher24.vercel.app";
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 5000;
 
 app.use(
