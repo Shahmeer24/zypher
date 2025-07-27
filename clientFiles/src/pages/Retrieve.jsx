@@ -161,7 +161,7 @@ function Retrieve() {
             />
           )}
 
-          {activeCode && !fileReady && alert.type && (
+          {activeCode && !fileReady && (
             <p className={rstyle.waitingMessage}>Fetching file...</p>
           )}
 

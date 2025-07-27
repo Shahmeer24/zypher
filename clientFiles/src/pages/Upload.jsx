@@ -11,8 +11,8 @@ import { faFile, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { QRCodeCanvas } from "qrcode.react";
 import { BASE_URL } from "../config";
 
-const MAX_FILE_SIZE_MB = 20;
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const MAX_FILE_SIZE_MB = 20;
 
 const Upload = () => {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ const Upload = () => {
     );
     const totalSize = uniqueFiles.reduce((sum, file) => sum + file.size, 0);
     if (totalSize > MAX_FILE_SIZE_MB * 1024 * 1024) {
-      showAlert("File size exceeds 10MB");
+      showAlert("File size exceeds 20MB");
       return;
     }
     setFiles(uniqueFiles);

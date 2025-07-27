@@ -6,6 +6,9 @@ const fs = require("fs");
 const cron = require("node-cron");
 const archiver = require("archiver");
 const rateLimit = require("express-rate-limit");
+const RateLimitRedisStore = require("rate-limit-redis");
+const Redis = require("ioredis");
+const redisClient = new Redis(process.env.REDIS_URL);
 const FRONTEND_URL = "https://zypher24.vercel.app";
 
 const app = express();
@@ -53,6 +56,18 @@ const upload = multer({
   storage: storage,
   limits: { fileSize: 20 * 1024 * 1024 },
 });
+
+const limiter = rateLimit({
+  store: new RateLimitRedisStore({
+    sendCommand: (...args)=> redisClient.call(...args),
+  }),
+  windowMs: 1 * 60 * 1000,
+  max: 10,
+  message: "Too many requests, please try again later.",
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use(limiter);
 
 app.get("/", (req, res) => {
   res.send("Zypher backend running.");
@@ -214,12 +229,7 @@ cron.schedule("* * * * *", () => {
   }
 });
 
-const limiter = rateLimit({
-  windowMs: 1 * 60 * 1000,
-  max: 10,
-  message: "Too many requests, please try again later.",
-});
-app.use(limiter);
+
 
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`);
