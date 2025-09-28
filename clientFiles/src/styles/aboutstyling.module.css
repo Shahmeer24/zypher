@@ -54,6 +54,12 @@ body{
   background: linear-gradient(135deg, #555555, #1a1a1a);
 }
 
+.backBtn{
+      justify-content: center;
+      width: 50%;
+      color: #a182d4;
+  }
+
 .footer {
   margin: 0 auto;
   text-align: center;
@@ -102,4 +108,5 @@ body{
     width: 100%;
     text-align: center;
   }
+    
 }
