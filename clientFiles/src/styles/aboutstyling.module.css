@@ -55,8 +55,11 @@ body{
 }
 
 .backBtn{
+      display:inline-flex;
       justify-content: center;
       align-items: center;
+      margin-left:auto;
+      margin-right:auto;
       width: 10rem;
       color: #a182d4;
       font-size: 1.1rem;
