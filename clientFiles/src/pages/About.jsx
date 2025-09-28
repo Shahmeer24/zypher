@@ -51,7 +51,7 @@ function About() {
         >
           <FontAwesomeIcon icon={faGithub} /> View on GitHub
         </a>
-        <button onClick={()=>navigate('/')}>Go Back</button>
+        <button className={astyle.backBtn} onClick={()=>navigate('/')}>Go Back</button>
         
       </div>
     </>
