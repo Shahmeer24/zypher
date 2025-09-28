@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 // import style from "../styles/styling.module.css";
 import astyle from "../styles/aboutstyling.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faArrowLeft } from "@fortawesome/free-brands-svg-icons";
 import { BASE_URL } from "../config";
 
 function About() {
@@ -51,7 +51,7 @@ function About() {
         >
           <FontAwesomeIcon icon={faGithub} /> View on GitHub
         </a>
-        <button className={astyle.backBtn} onClick={()=>navigate('/')}>Go Back</button>
+        <button className={astyle.backBtn} onClick={()=>navigate('/')}> <FontAwesomeIcon icon={faArrowLeft} />Go Back</button>
         
       </div>
     </>
