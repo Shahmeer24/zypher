@@ -56,9 +56,14 @@ body{
 
 .backBtn{
       justify-content: center;
-      width: 50%;
+      align-items: center;
+      width: 10rem;
       color: #a182d4;
+      font-size: 1.1rem;
   }
+.backBtn:hover{
+    text-decoration: underline;
+}
 
 .footer {
   margin: 0 auto;
