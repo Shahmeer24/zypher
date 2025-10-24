@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 // import style from "../styles/styling.module.css";
 import astyle from "../styles/aboutstyling.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faArrowLeft } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL } from "../config";
 
 function About() {
