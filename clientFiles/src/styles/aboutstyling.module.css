@@ -54,17 +54,30 @@ body{
   background: linear-gradient(135deg, #555555, #1a1a1a);
 }
 
-.backBtn{
-      display:inline-flex;
-      justify-content: center;
-      align-items: center;
-      margin-left:auto;
-      margin-right:auto;
-      color: #a182d4;
-      font-size: 1.1rem;
-  }
-.backBtn:hover{
-    text-decoration: underline;
+.backBtn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #8251d2 0%, #a182d4 100%);
+  box-shadow: 0 2px 10px rgba(130, 81, 210, 0.3);
+  transition: background 0.25s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backBtn:hover {
+  background: linear-gradient(135deg, #a182d4 0%, #8251d2 100%);
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(130, 81, 210, 0.4);
 }
 
 .footer {
