@@ -15,29 +15,9 @@ Zypher is a fast, minimal, and temporary file and text sharing app built for rea
 
 ## Stack
 
-**Frontend:** React, React Router, CSS Modules, FontAwesome, Vercel  
-**Backend:** Node.js, Express, Multer, Render
-
----
-
-## Run Locally
-
-**Backend**
-
-cd serverfiles
-npm install
-node index.js
-
-**Frontend**
-
-cd clientfiles
-npm install
-npm run dev
-
-zypher/
-├── clientFiles/ (React frontend)
-├── serverFiles/ (Express backend)
+**Frontend:** React, React Router, CSS Modules
+**Backend:** Node.js, Express, Multer, Archiver,
 
 **Note**
 
-Uploads are stored in memory. Data will reset if backend sleeps (Render free tier). -> Issue fixed using cronjobs 
+Uploads are stored in memory. Data will reset if backend sleeps (Render free tier).
