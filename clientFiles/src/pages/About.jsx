@@ -40,7 +40,7 @@ function About() {
         </p>
 
         <div className={astyle.footer}>
-          <span>Upload Count:</span>
+          <span>Total Uploads:</span>
           <strong>{uploadCount}</strong>
         </div>
 
