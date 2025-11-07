@@ -56,9 +56,8 @@ body{
 
 .backBtn {
   margin-top: 1.5rem;
-  padding: 0.7rem 1.4rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -76,7 +75,6 @@ body{
 
 .backBtn:hover {
   background: linear-gradient(135deg, #a182d4 0%, #8251d2 100%);
-  transform: scale(1.04);
   box-shadow: 0 4px 16px rgba(130, 81, 210, 0.4);
 }
 
