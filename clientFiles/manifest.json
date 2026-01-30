@@ -1,0 +1,22 @@
+{
+  "short_name": "Zypher",
+  "name": "Zypher - Minimal sharing tool",
+  "description": "A minimal text and file sharing tool.",
+  "icons": [
+    {
+      "src": "clientFiles/public/LOGO.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "clientFiles/public/LOGO.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#111111",
+  "background_color": "#111111"
+}

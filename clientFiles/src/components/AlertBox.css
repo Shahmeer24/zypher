@@ -1,0 +1,59 @@
+.alert-box {
+  position: fixed;
+  z-index: 1000;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: bold;
+  width: max-content;
+  max-width: 90%;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .alert-box {
+    bottom: 20px;
+    right: 20px;
+    transform: translateX(0);
+  }
+
+  .alert-box.hide {
+    transform: translateX(120%);
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .alert-box {
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .alert-box.hide {
+    transform: translate(-50%, -150%);
+    pointer-events: none;
+  }
+}
+
+/* Glass-tinted color states */
+.alert-box.success {
+  background: rgba(0, 179, 89, 0.25);
+  border-color: rgba(0, 179, 89, 0.45);
+}
+
+.alert-box.error {
+  background: rgba(185, 22, 41, 0.25);
+  border-color: rgba(185, 22, 41, 0.45);
+}
