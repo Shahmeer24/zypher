@@ -12,7 +12,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import { BASE_URL } from "../config";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-const MAX_FILE_SIZE_MB = 20;
+const MAX_FILE_SIZE_MB = 50;
 
 const Upload = () => {
   const navigate = useNavigate();
@@ -80,7 +80,7 @@ const Upload = () => {
     );
     const totalSize = uniqueFiles.reduce((sum, file) => sum + file.size, 0);
     if (totalSize > MAX_FILE_SIZE_MB * 1024 * 1024) {
-      showAlert("File size exceeds 20MB");
+      showAlert("File size exceeds 50MB");
       return;
     }
     setFiles(uniqueFiles);
@@ -177,7 +177,7 @@ const Upload = () => {
 
           <div className={ustyle.fileUploadSection}>
             <h3 className={ustyle.secondaryHeading}>
-              Select File(s) - max size 20mb
+              Select File(s) - max size 50mb
             </h3>
             <h3 className={ustyle.secondaryHeading}>
               Upload multiple files together to create a zip file

@@ -58,7 +58,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({
   storage: storage,
-  limits: { fileSize: 20 * 1024 * 1024 },
+  limits: { fileSize: 50 * 1024 * 1024 },
 });
 
 const limiter = rateLimit({
@@ -75,6 +75,10 @@ app.use(limiter);
 
 app.get("/", (req, res) => {
   res.send("Zypher backend running.");
+});
+
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
 app.post(

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { BASE_URL } from "./config";
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import Retrieve from "./pages/Retrieve";
@@ -16,6 +17,17 @@ function App() {
       window.addEventListener("load", handleLoad);
       return () => window.removeEventListener("load", handleLoad);
     }
+  }, []);
+
+  useEffect(() => {
+    const wakeUpServer = async () => {
+      try {
+        await fetch(`${BASE_URL}/api/health`, { method: "GET" });
+      } catch (error) {
+        console.debug("Server wake-up request sent");
+      }
+    };
+    wakeUpServer();
   }, []);
 
   if (!loaded) return null;
